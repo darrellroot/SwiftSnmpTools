@@ -7,22 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F82AC5328712BB10060931B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82AC5228712BB10060931B /* main.swift */; };
-		2F82AC5B28712CC30060931B /* SwiftSnmpKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F82AC5A28712CC30060931B /* SwiftSnmpKit */; };
-		2F82AC6328712D1B0060931B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82AC6228712D1B0060931B /* main.swift */; };
+		2F82AC6328712D1B0060931B /* SwiftSnmpGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82AC6228712D1B0060931B /* SwiftSnmpGet.swift */; };
 		2F82AC6928712E510060931B /* SwiftSnmpKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F82AC6828712E510060931B /* SwiftSnmpKit */; };
+		2F82AC6E287A20F90060931B /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 2F82AC6D287A20F90060931B /* ArgumentParser */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2F82AC4D28712BB10060931B /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		2F82AC5E28712D1B0060931B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -35,25 +25,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2F82AC4F28712BB10060931B /* SwiftSnmpTools */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftSnmpTools; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F82AC5228712BB10060931B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2F82AC6028712D1B0060931B /* swiftsnmpget */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swiftsnmpget; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F82AC6228712D1B0060931B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2F82AC6228712D1B0060931B /* SwiftSnmpGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSnmpGet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2F82AC4C28712BB10060931B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2F82AC5B28712CC30060931B /* SwiftSnmpKit in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2F82AC5D28712D1B0060931B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F82AC6E287A20F90060931B /* ArgumentParser in Frameworks */,
 				2F82AC6928712E510060931B /* SwiftSnmpKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,7 +45,6 @@
 		2F82AC4628712BB10060931B = {
 			isa = PBXGroup;
 			children = (
-				2F82AC5128712BB10060931B /* SwiftSnmpTools */,
 				2F82AC6128712D1B0060931B /* swiftsnmpget */,
 				2F82AC5028712BB10060931B /* Products */,
 				2F82AC6728712E510060931B /* Frameworks */,
@@ -74,24 +54,15 @@
 		2F82AC5028712BB10060931B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F82AC4F28712BB10060931B /* SwiftSnmpTools */,
 				2F82AC6028712D1B0060931B /* swiftsnmpget */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2F82AC5128712BB10060931B /* SwiftSnmpTools */ = {
-			isa = PBXGroup;
-			children = (
-				2F82AC5228712BB10060931B /* main.swift */,
-			);
-			path = SwiftSnmpTools;
-			sourceTree = "<group>";
-		};
 		2F82AC6128712D1B0060931B /* swiftsnmpget */ = {
 			isa = PBXGroup;
 			children = (
-				2F82AC6228712D1B0060931B /* main.swift */,
+				2F82AC6228712D1B0060931B /* SwiftSnmpGet.swift */,
 			);
 			path = swiftsnmpget;
 			sourceTree = "<group>";
@@ -106,26 +77,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2F82AC4E28712BB10060931B /* SwiftSnmpTools */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2F82AC5628712BB10060931B /* Build configuration list for PBXNativeTarget "SwiftSnmpTools" */;
-			buildPhases = (
-				2F82AC4B28712BB10060931B /* Sources */,
-				2F82AC4C28712BB10060931B /* Frameworks */,
-				2F82AC4D28712BB10060931B /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SwiftSnmpTools;
-			packageProductDependencies = (
-				2F82AC5A28712CC30060931B /* SwiftSnmpKit */,
-			);
-			productName = SwiftSnmpTools;
-			productReference = 2F82AC4F28712BB10060931B /* SwiftSnmpTools */;
-			productType = "com.apple.product-type.tool";
-		};
 		2F82AC5F28712D1B0060931B /* swiftsnmpget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F82AC6428712D1B0060931B /* Build configuration list for PBXNativeTarget "swiftsnmpget" */;
@@ -141,6 +92,7 @@
 			name = swiftsnmpget;
 			packageProductDependencies = (
 				2F82AC6828712E510060931B /* SwiftSnmpKit */,
+				2F82AC6D287A20F90060931B /* ArgumentParser */,
 			);
 			productName = swiftsnmpget;
 			productReference = 2F82AC6028712D1B0060931B /* swiftsnmpget */;
@@ -156,9 +108,6 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					2F82AC4E28712BB10060931B = {
-						CreatedOnToolsVersion = 13.4.1;
-					};
 					2F82AC5F28712D1B0060931B = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -175,31 +124,23 @@
 			mainGroup = 2F82AC4628712BB10060931B;
 			packageReferences = (
 				2F82AC5928712CC30060931B /* XCRemoteSwiftPackageReference "SwiftSnmpKit" */,
+				2F82AC6A287A1E3F0060931B /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 			);
 			productRefGroup = 2F82AC5028712BB10060931B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2F82AC4E28712BB10060931B /* SwiftSnmpTools */,
 				2F82AC5F28712D1B0060931B /* swiftsnmpget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2F82AC4B28712BB10060931B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2F82AC5328712BB10060931B /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2F82AC5C28712D1B0060931B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F82AC6328712D1B0060931B /* main.swift in Sources */,
+				2F82AC6328712D1B0060931B /* SwiftSnmpGet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,28 +260,6 @@
 			};
 			name = Release;
 		};
-		2F82AC5728712BB10060931B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8DU2Q8ABKY;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		2F82AC5828712BB10060931B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8DU2Q8ABKY;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		2F82AC6528712D1B0060931B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -375,15 +294,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F82AC5628712BB10060931B /* Build configuration list for PBXNativeTarget "SwiftSnmpTools" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2F82AC5728712BB10060931B /* Debug */,
-				2F82AC5828712BB10060931B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2F82AC6428712D1B0060931B /* Build configuration list for PBXNativeTarget "swiftsnmpget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -404,18 +314,26 @@
 				minimumVersion = 0.0.1;
 			};
 		};
+		2F82AC6A287A1E3F0060931B /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2F82AC5A28712CC30060931B /* SwiftSnmpKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F82AC5928712CC30060931B /* XCRemoteSwiftPackageReference "SwiftSnmpKit" */;
-			productName = SwiftSnmpKit;
-		};
 		2F82AC6828712E510060931B /* SwiftSnmpKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2F82AC5928712CC30060931B /* XCRemoteSwiftPackageReference "SwiftSnmpKit" */;
 			productName = SwiftSnmpKit;
+		};
+		2F82AC6D287A20F90060931B /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F82AC6A287A1E3F0060931B /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
