@@ -12,13 +12,23 @@ import SwiftSnmpKit
 
 @main
 struct SwiftSnmpGet: ParsableCommand {
-
+    // ./swiftsnmpget -c public 192.168.4.120 1.3.6.1.2.1.1.1.0
+    static let version = "0.0.10"
+    static let commandName = "swiftsnmpget"
+    static let discussion = """
+    SNMP commands in native Swift and open-source!
+    https://github.com/darrellroot/SwiftSnmpKit
+    """
+    static let configuration = CommandConfiguration(commandName: commandName, abstract: "", usage: "\(commandName) [OPTIONS] AGENT OID", discussion: discussion, version: version, shouldDisplay: true, subcommands: [], defaultSubcommand: nil, helpNames: nil)
+    @Option(name: .short, help: "SNMP community") var community: String
+    @Argument(help: "SNMP agent IP or hostname") var agent: String
+    @Argument(help: "SNMP OID") var oid: String
     
     func run() {
         var connection: NWConnection
-        connection = NWConnection(host: "192.168.4.120", port: 161, using: .udp)
+        connection = NWConnection(host: NWEndpoint.Host(agent), port: 161, using: .udp)
         
-        let snmpMessage = SnmpMessage(community: "public", command: .getNextRequest, oid: SnmpOid(".1.3.6.1.2.1")!)
+        let snmpMessage = SnmpMessage(community: community, command: .getNextRequest, oid: SnmpOid(oid)!)
         let data = snmpMessage.asnData
         
         connection.stateUpdateHandler = { (newState) in
