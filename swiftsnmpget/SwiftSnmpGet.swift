@@ -27,8 +27,8 @@ struct SwiftSnmpGet: ParsableCommand {
     func run() {
         var connection: NWConnection
         connection = NWConnection(host: NWEndpoint.Host(agent), port: 161, using: .udp)
-        
-        let snmpMessage = SnmpMessage(community: community, command: .getNextRequest, oid: SnmpOid(oid)!)
+        let command = SnmpPduType.getRequest
+        let snmpMessage = SnmpMessage(community: community, command: command, oid: SnmpOid(oid)!)
         let data = snmpMessage.asnData
         
         connection.stateUpdateHandler = { (newState) in
@@ -50,13 +50,7 @@ struct SwiftSnmpGet: ParsableCommand {
             }
         }
         connection.start(queue: .global())
-        
-
-        //let data = Data([0x30,0x26,0x02,0x01,0x01,0x04,0x06,0x70,0x75,0x62,0x6c,0x69,0x63,0xa1,0x19,0x02,0x04,0x2e,0x9d,0xf9,0xf1,0x02,0x01,0x00,0x02,0x01,0x00,0x30,0x0b,0x30,0x09,0x06,0x05,0x2b,0x06,0x01,0x02,0x01,0x05,0x00])
-        
-        print("before runloop")
         RunLoop.main.run()
-        print("should not get here")
     }
     func send(connection: NWConnection, data: Data) {
         connection.send(content: data, completion: NWConnection.SendCompletion.contentProcessed(({(error) in

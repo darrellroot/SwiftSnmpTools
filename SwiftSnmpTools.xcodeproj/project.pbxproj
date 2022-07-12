@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F45EF57287CDFC90038D552 /* SwiftSnmpToolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F45EF56287CDFC90038D552 /* SwiftSnmpToolsTests.swift */; };
+		2F45EF5C287CE0160038D552 /* SwiftSnmpKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F45EF5B287CE0160038D552 /* SwiftSnmpKit */; };
 		2F82AC6328712D1B0060931B /* SwiftSnmpGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82AC6228712D1B0060931B /* SwiftSnmpGet.swift */; };
 		2F82AC6928712E510060931B /* SwiftSnmpKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F82AC6828712E510060931B /* SwiftSnmpKit */; };
 		2F82AC6E287A20F90060931B /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 2F82AC6D287A20F90060931B /* ArgumentParser */; };
@@ -25,11 +27,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2F45EF54287CDFC90038D552 /* SwiftSnmpToolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftSnmpToolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F45EF56287CDFC90038D552 /* SwiftSnmpToolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSnmpToolsTests.swift; sourceTree = "<group>"; };
 		2F82AC6028712D1B0060931B /* swiftsnmpget */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swiftsnmpget; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F82AC6228712D1B0060931B /* SwiftSnmpGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSnmpGet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2F45EF51287CDFC90038D552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F45EF5C287CE0160038D552 /* SwiftSnmpKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F82AC5D28712D1B0060931B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,10 +54,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F45EF55287CDFC90038D552 /* SwiftSnmpToolsTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F45EF56287CDFC90038D552 /* SwiftSnmpToolsTests.swift */,
+			);
+			path = SwiftSnmpToolsTests;
+			sourceTree = "<group>";
+		};
 		2F82AC4628712BB10060931B = {
 			isa = PBXGroup;
 			children = (
 				2F82AC6128712D1B0060931B /* swiftsnmpget */,
+				2F45EF55287CDFC90038D552 /* SwiftSnmpToolsTests */,
 				2F82AC5028712BB10060931B /* Products */,
 				2F82AC6728712E510060931B /* Frameworks */,
 			);
@@ -55,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				2F82AC6028712D1B0060931B /* swiftsnmpget */,
+				2F45EF54287CDFC90038D552 /* SwiftSnmpToolsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,6 +99,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2F45EF53287CDFC90038D552 /* SwiftSnmpToolsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F45EF5A287CDFC90038D552 /* Build configuration list for PBXNativeTarget "SwiftSnmpToolsTests" */;
+			buildPhases = (
+				2F45EF50287CDFC90038D552 /* Sources */,
+				2F45EF51287CDFC90038D552 /* Frameworks */,
+				2F45EF52287CDFC90038D552 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftSnmpToolsTests;
+			packageProductDependencies = (
+				2F45EF5B287CE0160038D552 /* SwiftSnmpKit */,
+			);
+			productName = SwiftSnmpToolsTests;
+			productReference = 2F45EF54287CDFC90038D552 /* SwiftSnmpToolsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2F82AC5F28712D1B0060931B /* swiftsnmpget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F82AC6428712D1B0060931B /* Build configuration list for PBXNativeTarget "swiftsnmpget" */;
@@ -108,6 +150,9 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					2F45EF53287CDFC90038D552 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					2F82AC5F28712D1B0060931B = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -131,11 +176,30 @@
 			projectRoot = "";
 			targets = (
 				2F82AC5F28712D1B0060931B /* swiftsnmpget */,
+				2F45EF53287CDFC90038D552 /* SwiftSnmpToolsTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		2F45EF52287CDFC90038D552 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		2F45EF50287CDFC90038D552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F45EF57287CDFC90038D552 /* SwiftSnmpToolsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F82AC5C28712D1B0060931B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +211,36 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		2F45EF58287CDFC90038D552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8DU2Q8ABKY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.networkmom.SwiftSnmpToolsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2F45EF59287CDFC90038D552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8DU2Q8ABKY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.networkmom.SwiftSnmpToolsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		2F82AC5428712BB10060931B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -285,6 +379,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2F45EF5A287CDFC90038D552 /* Build configuration list for PBXNativeTarget "SwiftSnmpToolsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F45EF58287CDFC90038D552 /* Debug */,
+				2F45EF59287CDFC90038D552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2F82AC4A28712BB10060931B /* Build configuration list for PBXProject "SwiftSnmpTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -325,6 +428,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2F45EF5B287CE0160038D552 /* SwiftSnmpKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F82AC5928712CC30060931B /* XCRemoteSwiftPackageReference "SwiftSnmpKit" */;
+			productName = SwiftSnmpKit;
+		};
 		2F82AC6828712E510060931B /* SwiftSnmpKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2F82AC5928712CC30060931B /* XCRemoteSwiftPackageReference "SwiftSnmpKit" */;
