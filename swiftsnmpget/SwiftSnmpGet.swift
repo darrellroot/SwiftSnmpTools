@@ -31,11 +31,17 @@ struct SwiftSnmpGet: ParsableCommand {
         guard let snmpSender = SnmpSender.shared else {
             fatalError("Snmp Sender not inialized")
         }
-        do {
-            let result = try snmpSender.snmpGet(host: agent,community: community,oid: snmpOid)
-            print(result)
-        } catch {
-            debugPrint("Unable to send snmpGet: \(error.localizedDescription)")
+        
+        Task {
+            do {
+                let result = try await snmpSender.snmpGet(host: agent,community: community,oid: snmpOid)
+                print("about to print result")
+                print(result)
+                print("got result")
+                SwiftSnmpGet.exit()
+            } catch {
+                debugPrint("Unable to send snmpGet: \(error.localizedDescription)")
+            }
         }
         RunLoop.main.run()
     }
