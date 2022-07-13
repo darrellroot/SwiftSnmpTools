@@ -13,7 +13,7 @@ import SwiftSnmpKit
 @main
 struct SwiftSnmpGet: ParsableCommand {
     // ./swiftsnmpget -c public 192.168.4.120 1.3.6.1.2.1.1.1.0
-    static let version = "0.0.10"
+    static let version = "0.0.2"
     static let commandName = "swiftsnmpget"
     static let discussion = """
     SNMP commands in native Swift and open-source!
@@ -35,9 +35,13 @@ struct SwiftSnmpGet: ParsableCommand {
         Task {
             do {
                 let result = try await snmpSender.snmpGet(host: agent,community: community,oid: snmpOid)
-                print("about to print result")
-                print(result)
-                print("got result")
+                
+                switch result {
+                case .failure(let error):
+                    print("SNMP Error: \(error.localizedDescription)")
+                case .success(let variableBinding):
+                    print(variableBinding)
+                }
                 SwiftSnmpGet.exit()
             } catch {
                 debugPrint("Unable to send snmpGet: \(error.localizedDescription)")
