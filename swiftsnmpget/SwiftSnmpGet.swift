@@ -32,7 +32,7 @@ struct SwiftSnmpGet: AsyncParsableCommand {
             fatalError("Snmp Sender not inialized")
         }
         
-        let result = await snmpSender.snmpGet(host: agent,community: community,oid: snmpOid)
+        let result = await snmpSender.snmpCommand(host: agent,command: .getRequest, community: community,oid: snmpOid)
             
         switch result {
         case .failure(let error):
