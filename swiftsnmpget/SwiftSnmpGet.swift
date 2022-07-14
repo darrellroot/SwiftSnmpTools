@@ -40,16 +40,6 @@ struct SwiftSnmpGet: AsyncParsableCommand {
         case .success(let variableBinding):
             print(variableBinding)
         }
-        //}
-        /*Task {
-            sleep(10)
-            snmpTask.cancel()
-            print("exiting timer")
-            SwiftSnmpGet.exit()
-        }*/
-        //_ = snmpTask
-        //RunLoop.main.run()
     }
-
 }
 
