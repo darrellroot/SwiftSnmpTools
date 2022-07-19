@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>NioGetTest.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>SwiftSnmpTools.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -14,10 +19,20 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>swiftsnmpget.xcscheme_^#shared#^_</key>
+		<key>SwiftSnmpV3Get.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>SwiftSnmpWalk.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>swiftsnmpget.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 </dict>

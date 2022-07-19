@@ -42,7 +42,7 @@ struct SwiftSnmpWalk: AsyncParsableCommand {
         var consecutiveNextFailures = 0
         var nextOid = snmpOid
         while(!done) {
-            let getNextResult = await snmpSender.snmpCommand(host: agent,command: .getNextRequest, community: community,oid: nextOid)
+            let getNextResult = await snmpSender.sendV2(host: agent,command: .getNextRequest, community: community,oid: nextOid)
 
             switch getNextResult {
             case .failure(let error):
