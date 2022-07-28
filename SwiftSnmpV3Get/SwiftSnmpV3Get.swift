@@ -21,7 +21,7 @@ struct SwiftSnmpV3Get: AsyncParsableCommand {
     """
     static let configuration = CommandConfiguration(commandName: commandName, abstract: "", usage: "\(commandName) [OPTIONS] AGENT OID", discussion: discussion, version: version, shouldDisplay: true, subcommands: [], defaultSubcommand: nil, helpNames: nil)
     @Argument(help: "SNMP engine-id") var engineId: String = "80000009034c710c19e30d"
-    @Argument(help: "SNMP username") var username: String = "ciscouser"
+    @Argument(help: "SNMP username") var username: String = "ciscoauth" // ciscouser
     @Argument(help: "SNMP agent IP or hostname") var agent: String = "192.168.4.120"
     @Argument(help: "SNMP OID") var oid: String = "1.3.6.1.2.1.1.1.0"
     
@@ -35,13 +35,17 @@ struct SwiftSnmpV3Get: AsyncParsableCommand {
         guard let snmpOid = SnmpOid(oid) else {
             fatalError("Invalid OID: \(oid)")
         }
-        let result = await snmpSender.sendV3(host: agent, engineId: engineId, userName: username, pduType: .getRequest, oid: snmpOid)
-            
-        switch result {
-        case .failure(let error):
-            print("SNMP Error: \(error.localizedDescription)")
-        case .success(let variableBinding):
-            print(variableBinding)
+        //let result = await snmpSender.sendV3(host: agent, engineId: engineId, userName: username, pduType: .getRequest, oid: snmpOid)
+        for _ in 0..<3 {
+            let result = await snmpSender.sendV3(host: agent, userName: username, pduType: .getRequest, oid: snmpOid, authenticationType: .sha1, password: "authkey1auth")
+                
+            switch result {
+            case .failure(let error):
+                print("SNMP Error: \(error.localizedDescription)")
+            case .success(let variableBinding):
+                print(variableBinding)
+            }
+            sleep(1)
         }
     }
 }
