@@ -26,26 +26,21 @@ struct SwiftSnmpV3Get: AsyncParsableCommand {
     @Argument(help: "SNMP OID") var oid: String = "1.3.6.1.2.1.1.1.0"
     
     func run() async {
-        guard let snmpOid = SnmpOid(oid) else {
+        // testing the oid string
+        guard let _ = SnmpOid(oid) else {
             fatalError("Invalid OID")
         }
         guard let snmpSender = SnmpSender.shared else {
             fatalError("Snmp Sender not inialized")
         }
-        guard let snmpOid = SnmpOid(oid) else {
-            fatalError("Invalid OID: \(oid)")
-        }
-        //let result = await snmpSender.sendV3(host: agent, engineId: engineId, userName: username, pduType: .getRequest, oid: snmpOid)
-        for _ in 0..<3 {
-            let result = await snmpSender.sendV3(host: agent, userName: username, pduType: .getRequest, oid: snmpOid, authenticationType: .sha1, password: "authkey1auth")
-                
-            switch result {
-            case .failure(let error):
-                print("SNMP Error: \(error.localizedDescription)")
-            case .success(let variableBinding):
-                print(variableBinding)
-            }
-            sleep(1)
+
+        let result = await snmpSender.send(host: agent, userName: username, pduType: .getRequest, oid: oid, authenticationType: .sha1, password: "authkey1auth")
+            
+        switch result {
+        case .failure(let error):
+            print("SNMP Error: \(error.localizedDescription)")
+        case .success(let variableBinding):
+            print(variableBinding)
         }
     }
 }
