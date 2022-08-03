@@ -42,7 +42,8 @@ struct SwiftSnmpWalk: AsyncParsableCommand {
         var consecutiveNextFailures = 0
         var nextOid = snmpOid
         while(!done) {
-            let getNextResult = await snmpSender.sendV2(host: agent,command: .getNextRequest, community: community,oid: nextOid)
+            //let getNextResult = await snmpSender.send(host: agent,command: .getNextRequest, community: community,oid: nextOid.description)
+            let getNextResult = await snmpSender.send(host: agent, userName: "ciscoprivuser", pduType: .getNextRequest, oid: nextOid.description, authenticationType: .sha1, authPassword: "authpassword", privPassword: "privpassword")
 
             switch getNextResult {
             case .failure(let error):

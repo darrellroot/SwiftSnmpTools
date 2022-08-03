@@ -22,12 +22,12 @@
 		<key>SwiftSnmpV3Get.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>SwiftSnmpWalk.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>swiftsnmpget.xcscheme_^#shared#^_</key>
 		<dict>

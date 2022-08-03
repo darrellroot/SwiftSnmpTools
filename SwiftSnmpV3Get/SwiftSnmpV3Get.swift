@@ -20,8 +20,7 @@ struct SwiftSnmpV3Get: AsyncParsableCommand {
     https://github.com/darrellroot/SwiftSnmpKit
     """
     static let configuration = CommandConfiguration(commandName: commandName, abstract: "", usage: "\(commandName) [OPTIONS] AGENT OID", discussion: discussion, version: version, shouldDisplay: true, subcommands: [], defaultSubcommand: nil, helpNames: nil)
-    @Argument(help: "SNMP engine-id") var engineId: String = "80000009034c710c19e30d"
-    @Argument(help: "SNMP username") var username: String = "ciscoauth" // ciscouser
+    @Argument(help: "SNMP username") var username: String = "ciscoprivuser" // ciscouser
     @Argument(help: "SNMP agent IP or hostname") var agent: String = "192.168.4.120"
     @Argument(help: "SNMP OID") var oid: String = "1.3.6.1.2.1.1.1.0"
     
@@ -34,7 +33,7 @@ struct SwiftSnmpV3Get: AsyncParsableCommand {
             fatalError("Snmp Sender not inialized")
         }
 
-        let result = await snmpSender.send(host: agent, userName: username, pduType: .getRequest, oid: oid, authenticationType: .sha1, password: "authkey1auth")
+        let result = await snmpSender.send(host: agent, userName: username, pduType: .getRequest, oid: oid, authenticationType: .sha1, authPassword: "authpassword", privPassword: "privpassword")
             
         switch result {
         case .failure(let error):
