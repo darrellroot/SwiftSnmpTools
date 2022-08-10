@@ -67,6 +67,7 @@
 		2F3154D72886297000190310 /* SwiftSnmpV3Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSnmpV3Get.swift; sourceTree = "<group>"; };
 		2F561CA628A44EB200628EF9 /* SwiftSnmpV3Walk */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftSnmpV3Walk; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F561CA828A44EB200628EF9 /* SwiftSnmpV3Walk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSnmpV3Walk.swift; sourceTree = "<group>"; };
+		2F561CB128A45C3D00628EF9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2F82AC6028712D1B0060931B /* swiftsnmpget */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swiftsnmpget; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F82AC6228712D1B0060931B /* SwiftSnmpV2Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSnmpV2Get.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +139,7 @@
 		2F82AC4628712BB10060931B = {
 			isa = PBXGroup;
 			children = (
+				2F561CB128A45C3D00628EF9 /* README.md */,
 				2F82AC6128712D1B0060931B /* swiftsnmpget */,
 				2F3154C72880D52900190310 /* SwiftSnmpV2Walk */,
 				2F3154D62886297000190310 /* SwiftSnmpV3Get */,
