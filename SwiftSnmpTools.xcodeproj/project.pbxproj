@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F3154C92880D52900190310 /* SwiftSnmpWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3154C82880D52900190310 /* SwiftSnmpWalk.swift */; };
+		2F3154C92880D52900190310 /* SwiftSnmpV2Walk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3154C82880D52900190310 /* SwiftSnmpV2Walk.swift */; };
 		2F3154CE2880D53900190310 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3154CD2880D53900190310 /* ArgumentParser */; };
 		2F3154D02880D53E00190310 /* SwiftSnmpKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3154CF2880D53E00190310 /* SwiftSnmpKit */; };
 		2F3154D82886297100190310 /* SwiftSnmpV3Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3154D72886297000190310 /* SwiftSnmpV3Get.swift */; };
 		2F3154DD28862A9F00190310 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3154DC28862A9F00190310 /* ArgumentParser */; };
 		2F3154DF28862AA600190310 /* SwiftSnmpKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3154DE28862AA600190310 /* SwiftSnmpKit */; };
-		2F82AC6328712D1B0060931B /* SwiftSnmpGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82AC6228712D1B0060931B /* SwiftSnmpGet.swift */; };
+		2F561CA928A44EB200628EF9 /* SwiftSnmpV3Walk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F561CA828A44EB200628EF9 /* SwiftSnmpV3Walk.swift */; };
+		2F561CAE28A457AD00628EF9 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 2F561CAD28A457AD00628EF9 /* ArgumentParser */; };
+		2F561CB028A457B200628EF9 /* SwiftSnmpKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F561CAF28A457B200628EF9 /* SwiftSnmpKit */; };
+		2F82AC6328712D1B0060931B /* SwiftSnmpV2Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82AC6228712D1B0060931B /* SwiftSnmpV2Get.swift */; };
 		2F82AC6928712E510060931B /* SwiftSnmpKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F82AC6828712E510060931B /* SwiftSnmpKit */; };
 		2F82AC6E287A20F90060931B /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 2F82AC6D287A20F90060931B /* ArgumentParser */; };
 /* End PBXBuildFile section */
@@ -37,6 +40,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		2F561CA428A44EB200628EF9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		2F82AC5E28712D1B0060931B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,11 +62,13 @@
 
 /* Begin PBXFileReference section */
 		2F3154C62880D52900190310 /* SwiftSnmpWalk */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftSnmpWalk; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F3154C82880D52900190310 /* SwiftSnmpWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSnmpWalk.swift; sourceTree = "<group>"; };
+		2F3154C82880D52900190310 /* SwiftSnmpV2Walk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSnmpV2Walk.swift; sourceTree = "<group>"; };
 		2F3154D52886297000190310 /* SwiftSnmpV3Get */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftSnmpV3Get; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3154D72886297000190310 /* SwiftSnmpV3Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSnmpV3Get.swift; sourceTree = "<group>"; };
+		2F561CA628A44EB200628EF9 /* SwiftSnmpV3Walk */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftSnmpV3Walk; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F561CA828A44EB200628EF9 /* SwiftSnmpV3Walk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSnmpV3Walk.swift; sourceTree = "<group>"; };
 		2F82AC6028712D1B0060931B /* swiftsnmpget */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swiftsnmpget; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F82AC6228712D1B0060931B /* SwiftSnmpGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSnmpGet.swift; sourceTree = "<group>"; };
+		2F82AC6228712D1B0060931B /* SwiftSnmpV2Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSnmpV2Get.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F561CA328A44EB200628EF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F561CAE28A457AD00628EF9 /* ArgumentParser in Frameworks */,
+				2F561CB028A457B200628EF9 /* SwiftSnmpKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F82AC5D28712D1B0060931B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,12 +111,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F3154C72880D52900190310 /* SwiftSnmpWalk */ = {
+		2F3154C72880D52900190310 /* SwiftSnmpV2Walk */ = {
 			isa = PBXGroup;
 			children = (
-				2F3154C82880D52900190310 /* SwiftSnmpWalk.swift */,
+				2F3154C82880D52900190310 /* SwiftSnmpV2Walk.swift */,
 			);
-			path = SwiftSnmpWalk;
+			path = SwiftSnmpV2Walk;
 			sourceTree = "<group>";
 		};
 		2F3154D62886297000190310 /* SwiftSnmpV3Get */ = {
@@ -104,12 +127,21 @@
 			path = SwiftSnmpV3Get;
 			sourceTree = "<group>";
 		};
+		2F561CA728A44EB200628EF9 /* SwiftSnmpV3Walk */ = {
+			isa = PBXGroup;
+			children = (
+				2F561CA828A44EB200628EF9 /* SwiftSnmpV3Walk.swift */,
+			);
+			path = SwiftSnmpV3Walk;
+			sourceTree = "<group>";
+		};
 		2F82AC4628712BB10060931B = {
 			isa = PBXGroup;
 			children = (
 				2F82AC6128712D1B0060931B /* swiftsnmpget */,
-				2F3154C72880D52900190310 /* SwiftSnmpWalk */,
+				2F3154C72880D52900190310 /* SwiftSnmpV2Walk */,
 				2F3154D62886297000190310 /* SwiftSnmpV3Get */,
+				2F561CA728A44EB200628EF9 /* SwiftSnmpV3Walk */,
 				2F82AC5028712BB10060931B /* Products */,
 				2F82AC6728712E510060931B /* Frameworks */,
 			);
@@ -121,6 +153,7 @@
 				2F82AC6028712D1B0060931B /* swiftsnmpget */,
 				2F3154C62880D52900190310 /* SwiftSnmpWalk */,
 				2F3154D52886297000190310 /* SwiftSnmpV3Get */,
+				2F561CA628A44EB200628EF9 /* SwiftSnmpV3Walk */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,7 +161,7 @@
 		2F82AC6128712D1B0060931B /* swiftsnmpget */ = {
 			isa = PBXGroup;
 			children = (
-				2F82AC6228712D1B0060931B /* SwiftSnmpGet.swift */,
+				2F82AC6228712D1B0060931B /* SwiftSnmpV2Get.swift */,
 			);
 			path = swiftsnmpget;
 			sourceTree = "<group>";
@@ -185,6 +218,27 @@
 			productReference = 2F3154D52886297000190310 /* SwiftSnmpV3Get */;
 			productType = "com.apple.product-type.tool";
 		};
+		2F561CA528A44EB200628EF9 /* SwiftSnmpV3Walk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F561CAA28A44EB200628EF9 /* Build configuration list for PBXNativeTarget "SwiftSnmpV3Walk" */;
+			buildPhases = (
+				2F561CA228A44EB200628EF9 /* Sources */,
+				2F561CA328A44EB200628EF9 /* Frameworks */,
+				2F561CA428A44EB200628EF9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftSnmpV3Walk;
+			packageProductDependencies = (
+				2F561CAD28A457AD00628EF9 /* ArgumentParser */,
+				2F561CAF28A457B200628EF9 /* SwiftSnmpKit */,
+			);
+			productName = SwiftSnmpV3Walk;
+			productReference = 2F561CA628A44EB200628EF9 /* SwiftSnmpV3Walk */;
+			productType = "com.apple.product-type.tool";
+		};
 		2F82AC5F28712D1B0060931B /* swiftsnmpget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F82AC6428712D1B0060931B /* Build configuration list for PBXNativeTarget "swiftsnmpget" */;
@@ -222,6 +276,9 @@
 					2F3154D42886297000190310 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
+					2F561CA528A44EB200628EF9 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					2F82AC5F28712D1B0060931B = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -247,6 +304,7 @@
 				2F82AC5F28712D1B0060931B /* swiftsnmpget */,
 				2F3154C52880D52900190310 /* SwiftSnmpWalk */,
 				2F3154D42886297000190310 /* SwiftSnmpV3Get */,
+				2F561CA528A44EB200628EF9 /* SwiftSnmpV3Walk */,
 			);
 		};
 /* End PBXProject section */
@@ -256,7 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F3154C92880D52900190310 /* SwiftSnmpWalk.swift in Sources */,
+				2F3154C92880D52900190310 /* SwiftSnmpV2Walk.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,11 +326,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F561CA228A44EB200628EF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F561CA928A44EB200628EF9 /* SwiftSnmpV3Walk.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F82AC5C28712D1B0060931B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F82AC6328712D1B0060931B /* SwiftSnmpGet.swift in Sources */,
+				2F82AC6328712D1B0060931B /* SwiftSnmpV2Get.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +379,28 @@
 			name = Debug;
 		};
 		2F3154DB2886297100190310 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8DU2Q8ABKY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		2F561CAB28A44EB200628EF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8DU2Q8ABKY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2F561CAC28A44EB200628EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -479,6 +567,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2F561CAA28A44EB200628EF9 /* Build configuration list for PBXNativeTarget "SwiftSnmpV3Walk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F561CAB28A44EB200628EF9 /* Debug */,
+				2F561CAC28A44EB200628EF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2F82AC4A28712BB10060931B /* Build configuration list for PBXProject "SwiftSnmpTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -535,6 +632,16 @@
 			productName = ArgumentParser;
 		};
 		2F3154DE28862AA600190310 /* SwiftSnmpKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F82AC5928712CC30060931B /* XCRemoteSwiftPackageReference "SwiftSnmpKit" */;
+			productName = SwiftSnmpKit;
+		};
+		2F561CAD28A457AD00628EF9 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F82AC6A287A1E3F0060931B /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		2F561CAF28A457B200628EF9 /* SwiftSnmpKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2F82AC5928712CC30060931B /* XCRemoteSwiftPackageReference "SwiftSnmpKit" */;
 			productName = SwiftSnmpKit;

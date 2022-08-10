@@ -11,21 +11,21 @@ import ArgumentParser
 import SwiftSnmpKit
 
 @main
-struct SwiftSnmpWalk: AsyncParsableCommand {
-    // ./swiftsnmpwalk -c public 192.168.4.120 1.3.6.1.2.1.1.1.0
+struct SwiftSnmpV2Walk: AsyncParsableCommand {
+    // ./swiftsnmpv2walk -c public 192.168.4.120 1.3.6.1.2.1.1.1.0
     
     // Near end of MIB 1.3.111.2.802.3.1.5.1.2.2.1.14.7
     
     static let version = "0.0.2"
-    static let commandName = "swiftsnmpwalk"
+    static let commandName = "swiftsnmpv2walk"
     static let discussion = """
     SNMP commands in native Swift and open-source!
     https://github.com/darrellroot/SwiftSnmpKit
     """
     static let configuration = CommandConfiguration(commandName: commandName, abstract: "", usage: "\(commandName) [OPTIONS] AGENT OID", discussion: discussion, version: version, shouldDisplay: true, subcommands: [], defaultSubcommand: nil, helpNames: nil)
     @Option(name: .short, help: "SNMP community") var community: String = "public"
+    // I set a default agent name to help development
     @Argument(help: "SNMP agent IP or hostname") var agent: String = "192.168.4.120"
-    //@Argument(help: "SNMP OID") var oid: String = "1.3.6.1.2.1.1.1.0"
     @Argument(help: "SNMP OID") var oid: String = "1.3.6.1.2"
     // near end of mib on my test box
     //@Argument(help: "SNMP OID") var oid: String = "1.3.111.2.802.3.1.5.1.2.2.1.13"
@@ -37,13 +37,17 @@ struct SwiftSnmpWalk: AsyncParsableCommand {
         guard let snmpSender = SnmpSender.shared else {
             fatalError("Snmp Sender not inialized")
         }
+        //SnmpSender.debug = true
+        
         var done = false
         // three or more consecutive failures with our get or getNext requests terminates the loop
         var consecutiveNextFailures = 0
         var nextOid = snmpOid
         while(!done) {
-            //let getNextResult = await snmpSender.send(host: agent,command: .getNextRequest, community: community,oid: nextOid.description)
-            let getNextResult = await snmpSender.send(host: agent, userName: "ciscoprivuser", pduType: .getNextRequest, oid: nextOid.description, authenticationType: .sha1, authPassword: "authpassword", privPassword: "privpassword")
+            let getNextResult = await snmpSender.send(host: agent,command: .getNextRequest, community: community,oid: nextOid.description)
+            //let getNextResult = await snmpSender.send(host: agent, userName: "ciscouser", pduType: .getNextRequest, oid: nextOid.description, authenticationType: .noAuth, authPassword: nil, privPassword: nil)
+            //let getNextResult = await snmpSender.send(host: agent, userName: "ciscoauth", pduType: .getNextRequest, oid: nextOid.description, authenticationType: .sha1, authPassword: "authkey1auth", privPassword: nil)
+            //let getNextResult = await snmpSender.send(host: agent, userName: "ciscoprivuser", pduType: .getNextRequest, oid: nextOid.description, authenticationType: .sha1, authPassword: "authpassword", privPassword: "privpassword")
 
             switch getNextResult {
             case .failure(let error):
