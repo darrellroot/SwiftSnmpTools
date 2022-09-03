@@ -13,7 +13,7 @@ The swift-crypto library performs _much_ faster when built for release rather th
 3. swift-argument-parser https://github.com/apple/swift-argument-parser
 4. swift-nio https://github.com/apple/swift-nio
 5. swift-crypto https://github.com/apple/swift-crypto
-6. swift-atomics https://github.com/apple/swift-crypto
+6. swift-atomics https://github.com/apple/swift-atomics
 
 
 
